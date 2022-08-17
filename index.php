@@ -1,3 +1,20 @@
+<?php require 'vendor/autoload.php';?>
+<?php require 'config/database.php';
+
+// NUEVA INSTANCIA DE LA CLASE DATABASE
+$db = new Database();
+// ASIGNAMOS A $con LOS VALORES DE LA CLASE Y LA FUNCION DE CONEXION A LA BD YA CREADAS
+$con = $db->conectar();
+// DEFINIMOS UNA VARIABLE PARA GUARDAR LA CONSULTA SQL
+$sql = $con->prepare("SELECT * FROM usuario");
+// EJECUTAMOS LA CONSULTA DE LA VARIABLE $sql
+$sql->execute();
+
+$resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+
+?>
+<?php require 'src/clase-producto.php';?>
 
 <!doctype html>
 <html lang="en">
@@ -12,12 +29,13 @@
 
 <!-- CODIGO PHP PARA CONECTAR A LA FUNCION "require" EN PHP-->
 
-    <?php require 'vendor/autoload.php';?>
+    
+    
 
   </head>
   <body>
         <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand ms-4" href="#">Navbar</a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                 aria-expanded="false" aria-label="Toggle navigation"></button>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -43,77 +61,42 @@
             </div>
         </nav>
 
-
-     <?php  
-           class Producto {
-             public  $namep;
-             public  $branchproduct;
-             public  $descriptionp;
-             public  $priceproduct;
-             public  $stockproduct;
-           
-           
-             function __construct($namep, $branchproduct,
-             $descriptionp,$priceproduct,$stockproduct) {
-               $this->namep = $namep;
-               $this->branch = $branchproduct;
-               $this->description = $descriptionp;
-               $this->price = $priceproduct;
-               $this->stock = $stockproduct;
-             }
-           
-             function get_name() {  
-               return $this->namep;
-             }
-             function get_branch() {
-               return $this->branch;
-             }
-           
-             function get_description() {
-               return $this->description;
-             }
-           
-             function get_price() {
-               return $this->price;
-             }
-             function get_stock() {
-               return $this->stock;
-             }
-           }
-           
-           
-           $producto = new Producto ('sierra','B&D','Sierra de mano',250000,20);
-           
-    ?>
-    <table class="table m-4 table-striped">
+<!-- TABLA PARA IMPRIMIR PRODUCTOS -->
+     
+    <table class="table  table-hover m-4 table-striped">
                 <tr>
-                    <th scope="col">nombre</th>
-                    <th scope="col">marca</th>
-                    <th scope="col">descripcion</th>
-                    <th scope="col">precio</th>
-                    <th scope="col">cantidad</th>
+                   <td class="col">id</td>
+                   <td class="col">documento</td>
+                   <td class="col">nombre</td>
+                   <td class="col">apellido</td>
+                   <td class="col">correo</td>
+                   <td class="col">telefono</td>
+                   <td class="col">rol</td>
+                   <td class="col">contraseña</td>
                 </tr>
+<?php 
+$db = new Database();
+// ASIGNAMOS A $con LOS VALORES DE LA CLASE Y LA FUNCION DE CONEXION A LA BD YA CREADAS
+$con = $db->conectar();
+// DEFINIMOS UNA VARIABLE PARA GUARDAR LA CONSULTA SQL
+$sql = $con->prepare("SELECT * FROM usuario");
+// EJECUTAMOS LA CONSULTA DE LA VARIABLE $sql
+$sql->execute();
+// GUARDAMOS EL RESULTADO EN UNA NUEVA VARIABLE Y DEFINIMOS EL BUCLE CON 'foreach'
+$resultado = $sql->fetchAll(PDO::FETCH_ASSOC); foreach ($resultado as $row) {
 
-             
-                <tr>
-                <td><?php echo $producto ->get_name();?></th>
-                    <td><?php echo $producto ->get_branch();?></th>
-                    <td><?php echo $producto ->get_description();?></th>
-                    <td><?php echo $producto ->get_price();?></th>
-                    <td><?php echo $producto ->get_stock();?></th>
-
-               </tr>
-                <tr>
-                  <?php 
-                  $producto = new Producto ('taladro','dewalt','esto es un taladro',150000,30);
-           
 ?>
-                    <td><?php echo $producto ->get_name();?></th>
-                    <td><?php echo $producto ->get_branch();?></th>
-                    <td><?php echo $producto ->get_description();?></th>
-                    <td><?php echo $producto ->get_price();?></th>
-                    <td><?php echo $producto ->get_stock();?></th>
-                </tr>    
+                <tr>
+                  <td class="col"><?php echo $row ['id_usuario']; ?></td>
+                  <td class="col"><?php echo $row ['documento_usuario']; ?></td>
+                  <td class="col"><?php echo $row ['nombre_usuario']; ?></td>
+                  <td class="col"><?php echo $row ['apellido_usuario']; ?></td>
+                  <td class="col"><?php echo $row ['correo_usuario']; ?></td>
+                  <td class="col"><?php echo $row ['telefono_usuario']; ?></td>
+                  <td class="col"><?php echo $row ['rol']; ?></td>
+                  <td class="col"><?php echo $row ['contraseña']; ?></td>
+                </tr>
+<?php  } ?>
             </table>
             
   <!-- Bootstrap JavaScript Libraries -->

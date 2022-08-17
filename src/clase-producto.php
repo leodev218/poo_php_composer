@@ -4,11 +4,11 @@
 namespace Leodev\Poo; //esta uta se define cuando instalamos composer
 
 class Producto {
-  public  $namep;
-  public  $branchproduct;
-  public  $descriptionp;
-  public  $priceproduct;
-  public  $stockproduct;
+  public string $namep;
+  public string $branchproduct;
+  public string $descriptionp;
+  public int $priceproduct;
+  public int $stockproduct;
 
 
   public function __construct($namep, $branchproduct,
