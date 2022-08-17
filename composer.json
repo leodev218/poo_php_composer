@@ -1,0 +1,16 @@
+{
+    "name": "leodev/poo",
+    "description": "guia de aplicacion concepto POO",
+    "autoload": {
+        "psr-4": {
+            "Leodev\\Poo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "leodev218",
+            "email": "leonardo.dev218@gmail.com"
+        }
+    ],
+    "require": {}
+}

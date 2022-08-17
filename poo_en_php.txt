@@ -1,0 +1,84 @@
+    PORGRAMACION ORIENTADA A OBJETOS EN PHP
+
+en php se usa composer el cual permite mejorar y configurar la conexiones
+entre las diferentes clases del sistema, usa una funcion llamada AUTOLOADER el 
+cual evita  el uso de require y include dentro de nuestro codigo.
+
+en terminal: composer -v //version de composer 
+            sudo apt install composer //instalacion de composer
+
+valores de configuracion de aotuloader:
+dentro de la terminal ejecutamos los siguientes comandos.
+composer init // genera un nuevo proyecto
+package name // nombre de nuevo proyecto
+description //opcional
+autor  // toma las credenciales que tengamos en nuestro pc
+minium stability  
+
+las clases en php se crean con el enunciado 'class' y seguido se 
+asigna en nombre de la clase con la primera letra en mayuscula.
+dentro de la clase podemos definir las caracteristicas de cada 
+clase por medio de variables, las cuales van a almacenar los 
+datos unicos de cada clase, y posteriormente estas caracteristicas
+son usadas para definir nuevos objetos o instancias de la clase.
+las caracteristicas que definen cada clase pueden ser 'public' o 
+'private', cuando son publicas se puede acceder desde cualquier 
+parte del documento, cuando son privadas unicamente se pueden crear
+instancias dentro de la clase.
+
+'get' y 'set' estos metodos se ursarnr paa crear funciones dentro
+de nuestras clases, 'get' pemite definir un enunciado y set permite ingresar 
+datos, ejemplo:
+
+public function getId (){return $this -> $id}
+
+public function setId (string $id){$this -> id = $id }
+
+Constunctor, metodo dentro de php el cual permite ejecutar y construir 
+funciones cuando un objeto se esta creando, se crea '__construct'
+se puede defini clases, public, private o protected.
+  
+
+OBJETO EN INFORMATICA
+cualquier elemento emergente dentro de nuestra aplicacion se puede 
+considerar un objeto, los objetos hacen referencia a cada uno de 
+los diversos componentes del codigo de nuestra pagina, ejempĺo:
+-sesion 
+-string 
+-solicitud
+-mensaje
+las propiedades de cada objeto se definen en una clase, cada
+clase tiene propiedades y metodos; son las caracteristicas de el 
+objeto. Cuando definimos las propiedades especificas de cada 
+objeto, generamos encapsulamiento de sus propiedades lo cual 
+permite definir objetos y llamarlos posteriormente para crear 
+nuevas instancias o nuevos objetos de la clase en referencia.
+
+paradigma de la programacion hace referencia a las formas 
+que existen de programar, la POO es una de las formas de escribir
+codigo mas usadas en la actualidad, se basa en 4 conceptos
+principales:
+-Adstraccion
+-Encapsulamiento
+-Herencia
+-Polimorfismo
+
+ABSTRACCION
+Tomar las propiedades de objetos reales o ficticios
+
+ENCAPSULAMIENTO 
+
+HERENCIA 
+
+POLIMORFISMO 
+
+los objetos que son abstraidos de nuestro proyecto pasan a ser clases 
+dentro de la POO las clases se definen con el parametro class en php,
+ seguido asignamos el nombre de la variable y por convencion siempre se 
+inicia con un caracter alfabetico en mayuscula.
+
+metodo constructor de php (_contruct).
+instancia: al crear una variable dentro de la clase padre, al asignar
+la variable automaticamente se llama el metodo construct, un metodo 
+igual a funcion, se puede asignar publica o privada.
+  
